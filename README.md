@@ -54,27 +54,5 @@ Each row in the dataset represents one voice recording, with various features su
 The SVM classifier demonstrated high accuracy in predicting Parkinson’s disease, showing strong generalization across the test data.  
 This makes it a reliable baseline model for further optimization and deployment.
 
-## How to Run
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/parkinson-disease-detector.git
-   cd parkinson-disease-detector
-   ```
-2. Install the required dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Open and run the Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-4. Execute each cell sequentially to reproduce results.
-
-## Future Improvements
-- Integration with a web-based interface (e.g., Streamlit or Flask)  
-- Feature importance analysis using SHAP or LIME  
-- Model comparison with other algorithms (Random Forest, XGBoost, etc.)  
-- Real-time data prediction capability  
-
 ## Author
 **Raghav Bhatia**  
