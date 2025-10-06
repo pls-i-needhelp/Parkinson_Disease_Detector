@@ -1,82 +1,80 @@
-# Parkinson's Disease Detector using SVM
-
-This project uses **Machine Learning (ML)** techniques — specifically a **Support Vector Machine (SVM)** model — to detect **Parkinson’s Disease** from biomedical voice measurements.  
-The goal is to assist in the early diagnosis of Parkinson’s Disease based on voice-related features.
-
----
-
-## Table of Contents
-- [Overview](#overview)
-- [Dataset](#dataset)
-- [Features](#features)
-- [Model Used](#model-used)
-- [Workflow](#workflow)
-- [Results](#results)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Dependencies](#dependencies)
-- [Future Improvements](#future-improvements)
-- [Contributors](#contributors)
-- [License](#license)
-
----
+# Parkinson Disease Detection using SVM
 
 ## Overview
-Parkinson’s Disease (PD) is a progressive neurological disorder that affects movement and speech.  
-This project leverages **Machine Learning** to build a model capable of identifying Parkinson’s patients using voice features such as jitter, shimmer, and fundamental frequency.
-
-The **Support Vector Machine (SVM)** algorithm was chosen due to its effectiveness in classification problems with small-to-medium datasets and its robustness in handling non-linear decision boundaries.
-
----
-
-## Dataset
-The dataset used in this project is the **UCI Machine Learning Repository – Parkinson’s Dataset**.
-
-- **Dataset Link:** [https://archive.ics.uci.edu/ml/datasets/parkinsons](https://archive.ics.uci.edu/ml/datasets/parkinsons)
-- **Number of Instances:** 195  
-- **Number of Attributes:** 24 (including the target variable)  
-- **Target Variable:** `status`  
-  - `1` → Parkinson’s Disease  
-  - `0` → Healthy  
-
----
+This project aims to develop a machine learning model to detect Parkinson’s disease using voice measurements and biomedical features. The model utilizes a **Support Vector Machine (SVM)** algorithm to classify whether a patient has Parkinson’s disease based on the provided dataset.
 
 ## Features
-Some key features used in the dataset:
-- `MDVP:Fo(Hz)` — Average vocal fundamental frequency  
-- `MDVP:Fhi(Hz)` — Maximum vocal fundamental frequency  
-- `MDVP:Flo(Hz)` — Minimum vocal fundamental frequency  
-- `MDVP:Jitter(%)`, `MDVP:Jitter(Abs)` — Measures of variation in frequency  
-- `MDVP:Shimmer`, `MDVP:Shimmer(dB)` — Measures of variation in amplitude  
-- `NHR`, `HNR` — Ratio measures of noise to tonal components in the voice  
-- `RPDE`, `DFA` — Signal fractal scaling features  
-- `spread1`, `spread2`, `PPE` — Nonlinear dynamic complexity measures  
+- End-to-end implementation in Python using Jupyter Notebook  
+- Data preprocessing and normalization  
+- Feature extraction and visualization  
+- Model training using **SVM Classifier**  
+- Model evaluation using accuracy metrics  
+- Prediction system to test new input samples  
 
----
+## Dataset
+The dataset used in this project contains biomedical voice measurements from individuals, both healthy and affected by Parkinson’s disease.  
+Each row in the dataset represents one voice recording, with various features such as:
+- Fundamental frequency measurements  
+- Jitter and shimmer parameters  
+- Harmonic-to-noise ratio  
+- Nonlinear dynamical complexity measures  
 
-## Model Used
-The model used is a **Support Vector Machine (SVM)** with:
-- **Kernel:** RBF (Radial Basis Function)  
-- **C Parameter:** Tuned using Grid Search or manual optimization  
-- **Scaler:** StandardScaler applied to normalize data  
-
-The model separates the data points into two classes (Healthy vs Parkinson’s) using an optimal hyperplane.
-
----
+**Target variable:** `status`  
+- 1 → Parkinson’s disease  
+- 0 → Healthy  
 
 ## Workflow
-1. **Import Libraries**  
-2. **Load Dataset**  
-3. **Data Preprocessing**  
-   - Handle missing values (if any)  
-   - Feature scaling using `StandardScaler`  
-4. **Split Dataset**  
-   - 80% training  
-   - 20% testing  
-5. **Model Training** using `SVM`  
-6. **Prediction & Evaluation**   
-   - Accuracy Score    
+1. **Importing Dependencies**  
+   Import essential Python libraries like `numpy`, `pandas`, `sklearn`, and `matplotlib` for data processing and visualization.
 
----
+2. **Data Collection and Pre-processing**  
+   Load the dataset, handle missing values, and normalize feature columns for consistent scaling.
 
+3. **Splitting Dataset**  
+   Divide the dataset into training and testing sets using `train_test_split`.
 
+4. **Model Training**  
+   Train a Support Vector Machine (SVM) classifier using a linear kernel to distinguish between Parkinson’s and healthy subjects.
+
+5. **Model Evaluation**  
+   Evaluate model performance using accuracy score and confusion matrix.
+
+6. **Prediction System**  
+   Implement a system that takes input features and predicts if the person has Parkinson’s disease.
+
+## Technologies Used
+- Python 3.x  
+- Jupyter Notebook  
+- scikit-learn  
+- NumPy  
+- Pandas  
+- Matplotlib  
+
+## Results
+The SVM classifier demonstrated high accuracy in predicting Parkinson’s disease, showing strong generalization across the test data.  
+This makes it a reliable baseline model for further optimization and deployment.
+
+## How to Run
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/parkinson-disease-detector.git
+   cd parkinson-disease-detector
+   ```
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Open and run the Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+4. Execute each cell sequentially to reproduce results.
+
+## Future Improvements
+- Integration with a web-based interface (e.g., Streamlit or Flask)  
+- Feature importance analysis using SHAP or LIME  
+- Model comparison with other algorithms (Random Forest, XGBoost, etc.)  
+- Real-time data prediction capability  
+
+## Author
+**Raghav Bhatia**  
